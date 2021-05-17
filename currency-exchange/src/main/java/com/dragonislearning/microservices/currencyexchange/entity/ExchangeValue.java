@@ -3,15 +3,13 @@ package com.dragonislearning.microservices.currencyexchange.entity;
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class ExchangeValue {
 	
 	@Id
-	@GeneratedValue()
-	private Long id;
+	private Integer id;
 	
 	private String currencyFrom;
 	
@@ -19,11 +17,11 @@ public class ExchangeValue {
 	
 	private BigDecimal conversionRate;
 	
-	private int port;
+	private int servicePort;
 	
 	public ExchangeValue() {}
 
-	public ExchangeValue(Long id, String currencyFrom, String currencyTo, BigDecimal conversionRate) {
+	public ExchangeValue(Integer id, String currencyFrom, String currencyTo, BigDecimal conversionRate) {
 		super();
 		this.id = id;
 		this.currencyFrom = currencyFrom;
@@ -31,11 +29,11 @@ public class ExchangeValue {
 		this.conversionRate = conversionRate;
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -63,12 +61,12 @@ public class ExchangeValue {
 		this.conversionRate = conversionRate;
 	}
 
-	public int getPort() {
-		return port;
+	public int getServicePort() {
+		return servicePort;
 	}
 
-	public void setPort(int port) {
-		this.port = port;
+	public void setServicePort(int servicePort) {
+		this.servicePort = servicePort;
 	}	
 
 }
